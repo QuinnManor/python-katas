@@ -4,6 +4,8 @@ def fizzbuzz(num):
         response = 'fizzbuzz'
     elif num % 3 == 0:
         response = 'fizz'
-    else:
+    elif num % 5 == 0:
         response = 'buzz'
+    else:
+        response = num
     return response

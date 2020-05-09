@@ -1,2 +1,5 @@
 def fizzbuzz(num):
-    return "fizz"
+    response = 'fizz'
+    if num % 5 == 0:
+        response = 'buzz'
+    return response

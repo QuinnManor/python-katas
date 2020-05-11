@@ -1,1 +1,1 @@
-# Python Katas
+# Fizzbuzz Kata

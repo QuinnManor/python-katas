@@ -16,8 +16,10 @@ The fizzbuzz application accepts a number and outputs either: fizz, buzz, fizzbu
 2. `cd python-katas`
 3. `git checkout fizzbuzz`
 
-## Application Usage
+## Fizzbuzz Usage
+To execute the test suite run:
 
+`pytest test_fizzbuzz.py`
 
 ## Project Organization
 ------------

@@ -16,18 +16,29 @@ The fizzbuzz application accepts a number and outputs either: fizz, buzz, fizzbu
 2. `cd python-katas`
 3. `git checkout fizzbuzz`
 
-## Fizzbuzz Usage
+## Running our Tests
 To execute the test suite run:
 
-`pytest test_fizzbuzz.py`
+```python
+pytest
+```
+
+## Fizzbuzz Usage
+To run the application:
+
+```python
+python app.py
+```
 
 ## Project Organization
 ------------
-    ├── README.md          <- The top-level README for developers using this project.
+    ├── README.md         <- The top-level README for developers using this project.
     |
-    ├── fizzbuzz.py        <- The fizzbuzz application.
+    ├── app.py            <- The main application.
     |
-    ├── test_fizzbuzz.py   <- The unit test suite of the fizzbuzz application.
+    ├── fizzbuzz          <- Directory holding fizzbuzz 
+    │   ├── fizzbuzz.py        <- The fizzbuzz application.
+    │   ├── test_fizzbuzz.py   <- The unit test suite for the.
     |
     ├── .gitignore         <- Specifies which files to ignore within the repository.
 --------

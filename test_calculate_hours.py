@@ -1,4 +1,4 @@
-from babysitter import calculate_hours
+from calculate_hours import calculate_hours
 import pytest
 
 

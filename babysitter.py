@@ -1,22 +1,37 @@
+EARLIEST_START_TIME = 5
+LATEST_END_TIME = 4
+MIDNIGHT = 12
+MILITARY_MIDNIGHT = 0
+
+
 def calculate_hours(start_time, end_time, time_of_day='PM'):
-    start_time = _check_earliest_start_time(start_time, time_of_day)
-    end_time = _check_latest_end_time(end_time, time_of_day)
+    start_time = _check_start_time(start_time, time_of_day)
+    end_time = _check_end_time(end_time, time_of_day)
     return end_time - start_time
 
 
-def _check_earliest_start_time(start_time, time_of_day):
-    if start_time not in range(5, 13) and time_of_day == 'PM':
-        start_time = 5
-
-    if start_time in range(5, 13) and time_of_day == 'PM/AM':
-        start_time += 12
+def _check_start_time(start_time, time_of_day):
+    if _is_before_earliest_start_time(start_time, time_of_day):
+        start_time = EARLIEST_START_TIME
     return start_time
 
 
-def _check_latest_end_time(end_time, time_of_day):
-    if end_time not in range(0, 4) and time_of_day == 'AM':
-        end_time = 4
+def _is_before_earliest_start_time(start_time, time_of_day):
+    return start_time not in range(EARLIEST_START_TIME, MIDNIGHT + 1) and time_of_day == 'PM'
 
-    if end_time in range(0, 4) and time_of_day == 'PM/AM':
-            end_time += 24
+
+def _check_end_time(end_time, time_of_day):
+    if _is_past_latest_end_time(end_time, time_of_day):
+        end_time = LATEST_END_TIME
+
+    if _is_overnight(end_time, time_of_day):
+        end_time += MIDNIGHT
     return end_time
+
+
+def _is_past_latest_end_time(end_time, time_of_day):
+    return end_time not in range(MILITARY_MIDNIGHT, LATEST_END_TIME) and time_of_day == 'AM'
+
+
+def _is_overnight(end_time, time_of_day):
+    return end_time in range(MILITARY_MIDNIGHT, LATEST_END_TIME) and time_of_day == 'PM/AM'

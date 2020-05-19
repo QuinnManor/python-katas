@@ -1,4 +1,4 @@
-from babysitter import *
+from babysitter import calculate_hours
 
 
 def test_calculate_hours():

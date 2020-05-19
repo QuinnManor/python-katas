@@ -18,3 +18,10 @@ def test_latest_end_time():
     end_time = 5
     time_of_day = 'AM'
     assert calculate_hours(start_time, end_time, time_of_day) == 1
+
+
+def test_pm_am_hours():
+    start_time = 11
+    end_time = 1
+    time_of_day = 'PM/AM'
+    assert calculate_hours(start_time, end_time, time_of_day) == 2

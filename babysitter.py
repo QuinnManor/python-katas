@@ -7,6 +7,10 @@ MILITARY_MIDNIGHT = 0
 def calculate_hours(start_time, end_time, time_of_day='PM'):
     start_time = _check_start_time(start_time, time_of_day)
     end_time = _check_end_time(end_time, time_of_day)
+
+    if start_time > end_time:
+        raise Exception("Shift can't end before it starts!")
+
     return end_time - start_time
 
 
